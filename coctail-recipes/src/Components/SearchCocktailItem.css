@@ -1,0 +1,41 @@
+.searchCocktail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  max-height: 400px;
+  min-width: 200px;
+  background-color: white;
+  z-index: 1;
+}
+
+.searchCocktail > img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.searchCocktail__rating {
+  display: flex;
+  width: 100%;
+  align-items: left;
+  font-size: 12px;
+}
+
+.searchCocktail__ratingIcon {
+  color: rgb(255, 230, 0);
+  margin-right: -10px;
+  height: 15px !important;
+}
+
+.searchCocktail__info {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

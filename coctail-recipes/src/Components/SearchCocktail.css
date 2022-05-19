@@ -1,0 +1,18 @@
+.searchCocktail {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.searchCocktail__row {
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  margin-right: 5px;
+  margin-left: 5px;
+}
