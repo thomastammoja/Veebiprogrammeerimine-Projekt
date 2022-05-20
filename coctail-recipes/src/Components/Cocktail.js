@@ -9,7 +9,7 @@ function Cocktail({ recipe }) {
   return (
     <div className="cocktail">
       <div className="cocktail__info">
-        <p>{recipe.name}</p>
+        <p>{recipe.recipename}</p>
       </div>
 
       <img src={recipe.image} alt="" onClick={() => setOpenModal(true)} />
@@ -24,6 +24,7 @@ function Cocktail({ recipe }) {
       </div>
       {openModal && (
         <CocktailModal
+          key={recipe.id}
           open={openModal}
           onClose={() => setOpenModal(false)}
           recipe={recipe}

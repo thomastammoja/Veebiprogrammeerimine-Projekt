@@ -1,13 +1,6 @@
 export const initialState = {
   recipes: [],
-  alcoholicRecipes: [],
-};
-
-const getAlcoholicRecipes = (state, action) => {
-  switch (action.type) {
-    case "ADD_ALCOHOLIC":
-      return null;
-  }
+  alcohol: [],
 };
 
 const reducer = (state, action) => {

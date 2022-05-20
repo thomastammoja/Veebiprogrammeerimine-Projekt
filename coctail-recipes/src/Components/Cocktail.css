@@ -8,7 +8,7 @@
   max-height: 400px;
   min-width: 100px;
   background-color: white;
-  z-index: 1;
+  border-radius: 10px;
 }
 
 .cocktail__info {
@@ -23,6 +23,12 @@
   width: 100%;
   object-fit: contain;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.cocktail > img:hover {
+  transition: 200ms;
+  transform: scale(1.02);
 }
 
 .cocktail__rating {

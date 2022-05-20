@@ -1,4 +1,4 @@
-DROP VIEW coctails.v_allRecipes;
+DROP VIEW IF EXISTS coctails.v_allRecipes;
 CREATE VIEW coctails.v_allRecipes AS (
 	SELECT
 		 rec.id

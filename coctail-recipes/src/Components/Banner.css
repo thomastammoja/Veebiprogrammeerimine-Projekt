@@ -1,0 +1,13 @@
+.banner__image {
+  width: 100%;
+  object-fit: contain;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: -1;
+  margin-top: -400px;
+}
+
+@media (max-width: 1109px) {
+  .banner__image {
+    display: none;
+  }
+}

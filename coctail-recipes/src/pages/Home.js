@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
-import Cocktail from "./Cocktail";
+import Cocktail from "../components/Cocktail";
 import { useStateValue } from "../StateProvider";
-import CocktailModal from "./CocktailModal";
+import CocktailModal from "../components/CocktailModal";
+import Banner from "../components/Banner";
 
 const Home = () => {
   const [{ recipes }, dispatch] = useStateValue();
@@ -21,7 +22,7 @@ const Home = () => {
           type: "ADD_RECIPE",
           item: {
             id: s.id,
-            name: s.recipename,
+            recipename: s.recipename,
             image: s.image,
             rating: s.rating,
             instructions: s.instructions,
@@ -74,8 +75,6 @@ const Home = () => {
           },
         })
       );
-
-      console.log("Those are the recipes >>> ", recipes);
     } catch (err) {
       console.error(err.message);
     }
@@ -87,17 +86,15 @@ const Home = () => {
     }
   }, []);
 
+  console.log(recipes);
+
   return (
     <div className="home">
       <div className="home__container">
-        <img
-          className="home__image"
-          src="https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/12/cocktails-promo.jpg"
-          alt=""
-        />
+        <Banner className="home__image" />
         <div className="home__cocktails">
           {recipes.map((item) => (
-            <div className="home__cocktail">
+            <div key={item.id} className="home__cocktail">
               <Cocktail recipe={item} />
               <CocktailModal recipe={item} />
             </div>

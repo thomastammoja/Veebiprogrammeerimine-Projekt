@@ -14,7 +14,7 @@ function CocktailModal({ open, onClose, recipe }) {
         className="cocktailModal__container"
       >
         <div className="cocktailModal__title">
-          <h4>{recipe.name}</h4>
+          <h4>{recipe.recipename}</h4>
           <p onClick={onClose}>X</p>
         </div>
 
@@ -80,15 +80,24 @@ function CocktailModal({ open, onClose, recipe }) {
                   <td>{recipe.ingredient10}</td>
                   <td>{recipe.measure10}</td>
                 </tr>
-                <tr>
-                  <td>Jää {recipe.icetype}</td>
-                </tr>
               </tbody>
             </table>
 
+            <div className="cocktailModal__additionalIngredients">
+              <h5>Lisaks</h5>
+              <small>{recipe.icetype}</small>
+              <small>{recipe.glassware}</small>
+            </div>
+
             <div className="cocktailModal__instructions">
               <h5>Juhised</h5>
-              <p>{recipe.instructions}</p>
+              <small>{recipe.instructions}</small>
+            </div>
+
+            <div className="cocktailModal__footer">
+              <small>
+                Kõik retseptid on arvestusega ühe kokteili tegemiseks!
+              </small>
             </div>
           </div>
         </div>

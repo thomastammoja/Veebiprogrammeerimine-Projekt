@@ -2,7 +2,7 @@
   max-width: 600px;
   width: 100%;
   position: fixed;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
@@ -21,11 +21,12 @@
 
 .cocktailModal__title {
   display: flex;
+  align-items: center;
   width: 100%;
-  height: 30px;
   font-size: 20px;
   font-weight: 700;
-  margin: 10px 10px 20px 10px;
+  padding: 0px 20px 20px 20px;
+  margin-top: 20px;
 }
 
 .cocktailModal__title > h4 {
@@ -37,24 +38,26 @@
   position: fixed;
   font-size: 20px;
   font-weight: 700;
-  top: 8px;
-  right: 8px;
-  transition: transform 300ms;
+  right: 20px;
+  cursor: pointer;
 }
 
 .cocktailModal__title > p:hover {
-  transform: scale(1.1);
+  transition: 200ms;
+  transform: scale(1.2);
+  color: #e29633;
 }
 
 .cocktailModal__row {
   display: flex;
-  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .cocktailModal__columnLeft > img {
   max-width: 300px;
   object-fit: contain;
-  margin-left: 0;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 .cocktailModal__rating {
@@ -62,8 +65,7 @@
   width: 100%;
   align-items: left;
   font-size: 12px;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 10px;
 }
 
 .cocktailModal__ratingIcon {
@@ -73,19 +75,45 @@
 }
 
 .cocktailModal__columnRight {
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 20px;
   width: 100%;
 }
 
 .cocktailModal__ingredients > thead {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.cocktailModal__instructions > h5 {
-  margin-top: 20px;
+.cocktailModal__ingredients > tbody {
   font-size: 14px;
+}
+
+.cocktailModal__additionalIngredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.cocktailModal__instructions > h5,
+.cocktailModal__additionalIngredients > h5 {
+  margin-top: 30px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.cocktailModal__instructions > small,
+.cocktailModal__additionalIngredients > small {
+  font-size: 14px;
+}
+
+.cocktailModal__footer {
+  position: fixed;
+  bottom: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 20px;
 }
