@@ -7,7 +7,7 @@ import { legacy_createStore, applyMiddleware, compose } from "redux";
 // Components
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import AllReducers from "./reducers/AllReducers";
+import Reducer from "./reducer";
 import { FetchRecipes } from "./actions/RecipesActions";
 
 //Styles
@@ -16,7 +16,7 @@ import "./index.css";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = legacy_createStore(
-  AllReducers,
+  Reducer,
   composeEnhancers(applyMiddleware(thunk))
 );
 

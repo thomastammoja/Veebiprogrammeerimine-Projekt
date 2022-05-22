@@ -2,14 +2,14 @@ const initialState = {
   allRecipes: [],
 };
 
-const RecipesReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_RECIPES":
       return {
         ...state,
-        allRecipes: action.payload,
+        allRecipes: action.recipes,
       };
   }
 };
 
-export default RecipesReducer;
+export default reducer;

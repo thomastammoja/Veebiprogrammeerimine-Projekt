@@ -10,7 +10,7 @@ import Banner from "../components/Banner";
 import "./Home.css";
 
 const Home = () => {
-  const recipes = useSelector((state) => state.recipes.allRecipes);
+  const recipes = useSelector((state) => state.allRecipes);
 
   return (
     <div className="home">

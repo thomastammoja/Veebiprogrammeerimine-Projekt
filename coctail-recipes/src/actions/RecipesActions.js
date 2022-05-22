@@ -8,7 +8,7 @@ export const FetchRecipes = () => {
         .then((data) => {
           dispatch({
             type: FETCH_RECIPES,
-            payload: data,
+            recipes: data,
           });
         });
     } catch (err) {

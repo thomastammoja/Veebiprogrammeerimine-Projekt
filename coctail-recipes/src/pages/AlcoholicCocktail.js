@@ -9,7 +9,7 @@ import CocktailModal from "../components/CocktailModal";
 import "./AlcoholicCocktail.css";
 
 const AlcoholicCocktail = () => {
-  const recipes = useSelector((state) => state.recipes.allRecipes).filter(
+  const recipes = useSelector((state) => state.allRecipes).filter(
     (i) => i.includesalcohol === 1
   );
 
