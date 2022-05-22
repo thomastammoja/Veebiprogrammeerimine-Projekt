@@ -28,6 +28,7 @@ function Cocktail({ recipe }) {
           open={openModal}
           onClose={() => setOpenModal(false)}
           recipe={recipe}
+          showShuffle={false}
         />
       )}
     </div>

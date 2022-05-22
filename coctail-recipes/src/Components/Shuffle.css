@@ -1,0 +1,19 @@
+.shuffle__light {
+  color: black !important;
+  height: 20px !important;
+}
+
+.shuffle__dark {
+  color: white !important;
+}
+
+.shuffle__light:hover {
+  transition: 200ms !important;
+  transform: scale(1.2);
+  color: #ff9900 !important;
+}
+
+.shuffle__dark:hover {
+  transition: 200ms !important;
+  color: #ff9900 !important;
+}

@@ -65,23 +65,12 @@
   text-decoration: none !important;
 }
 
-.header__nav > a:last-child {
-  margin-left: 30px;
-  margin-right: 0px;
-}
-
 .header__option {
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-}
-
-.header__optionShuffle {
-  align-items: center;
-  color: white;
-  height: 16px;
 }
 
 .header__searchInput:focus {
@@ -110,11 +99,6 @@
   text-underline-offset: 3px;
 }
 
-.header__optionShuffle:hover {
-  transition: 200ms;
-  color: #ff9900;
-}
-
 @media (max-width: 739px) {
   .header__search {
     display: none;
@@ -125,7 +109,8 @@
   }
 
   .header__nav {
-    margin-left: 0;
+    position: fixed;
+    right: 0px;
   }
 }
 
@@ -141,4 +126,8 @@
 
 .header__menuButton:first-child {
   margin-left: 20px;
+}
+
+.active .header__option {
+  color: #ff9900 !important;
 }

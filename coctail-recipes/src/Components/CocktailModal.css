@@ -8,6 +8,8 @@
   background-color: #ffffff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
   border-radius: 8px;
+  animation: fadein 500ms;
+  height: auto;
 }
 
 .cocktailModal {
@@ -17,32 +19,40 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 101 !important;
 }
 
-.cocktailModal__title {
+.cocktailModal__header {
   display: flex;
   align-items: center;
   width: 100%;
   font-size: 20px;
   font-weight: 700;
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 0px 20px;
   margin-top: 20px;
 }
 
-.cocktailModal__title > h4 {
+.cocktailModal__title {
+  display: flex;
+  align-items: center;
   font-size: 20px;
   font-weight: 700;
 }
 
-.cocktailModal__title > p {
+.cocktailModal__shuffleIcon {
   position: fixed;
-  font-size: 20px;
-  font-weight: 700;
   right: 20px;
+  margin-top: -50px;
+}
+
+.cocktailModal__closeIcon {
+  position: fixed;
+  right: 0px;
+  margin-top: -45px;
   cursor: pointer;
 }
 
-.cocktailModal__title > p:hover {
+.cocktailModal__closeIcon:hover {
   transition: 200ms;
   transform: scale(1.2);
   color: #e29633;
@@ -54,16 +64,14 @@
 }
 
 .cocktailModal__columnLeft > img {
-  max-width: 300px;
+  max-width: 280px;
   object-fit: contain;
   border: solid 1px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
 .cocktailModal__rating {
-  display: flex;
   width: 100%;
-  align-items: left;
   font-size: 12px;
   margin-top: 10px;
 }
@@ -90,6 +98,7 @@
 
 .cocktailModal__ingredients > tbody {
   font-size: 14px;
+  font-weight: 400;
 }
 
 .cocktailModal__additionalIngredients {
@@ -108,12 +117,113 @@
 .cocktailModal__instructions > small,
 .cocktailModal__additionalIngredients > small {
   font-size: 14px;
+  font-weight: 400;
 }
 
 .cocktailModal__footer {
-  position: fixed;
-  bottom: 40px;
+  margin-top: 20px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 300;
   padding-right: 20px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 739px) {
+  .cocktailModal__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    top: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .cocktailModal__header {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .cocktailModal__columnLeft > img {
+    margin-top: -20px;
+    max-width: 300px;
+  }
+
+  .cocktailModal__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cocktailModal__columnRight {
+    margin-top: 10px;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cocktailModal__ingredients {
+    min-width: 50%;
+    width: fit-content;
+  }
+
+  .cocktailModal__ingredients > thead {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .cocktailModal__ingredients > tbody {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .cocktailModal__additionalIngredients {
+    margin-top: -2px;
+  }
+  .cocktailModal__instructions > h5,
+  .cocktailModal__additionalIngredients > h5 {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .cocktailModal__instructions > small,
+  .cocktailModal__additionalIngredients > small {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-weight: 400;
+    padding-right: 70px !important;
+  }
+  .cocktailModal__additionalIngredients > small:first-of-type {
+    margin-top: -5px;
+  }
+
+  .cocktailModal__rating,
+  .cocktailModal__footer {
+    display: none;
+  }
 }

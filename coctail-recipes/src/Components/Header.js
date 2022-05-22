@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
+// Components
+import Shuffle from "./Shuffle";
+
+// Icons
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "@mui/icons-material/LocalBar";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
 import MenuIcon from "@mui/icons-material/Menu";
 
+// Stylesheet
 import "./Header.css";
 
 function Header() {
@@ -15,13 +19,21 @@ function Header() {
     e.preventDefault();
     console.log(query);
   };
+
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      color: isActive ? "blue" : "white",
+    };
+  };
+
   return (
     <div className="header">
       <div className="header__container">
         <div className="header__logo">
-          <Link to="/">
+          <NavLink to="/">
             <Logo className="header__logoIcon" />
-          </Link>
+          </NavLink>
         </div>
 
         <div className="header__search" onSubmit={submitHandler}>
@@ -32,26 +44,20 @@ function Header() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <SearchIcon className="header__searchIcon" onClick={submitHandler} />
+          <SearchIcon className="header__searchIcon" />
         </div>
 
         <div className="header__nav">
-          <Link to="/alcohol">
-            <span className="header__option">Alkohoolsed</span>
-          </Link>
+          <NavLink to="/alcohol">
+            <a className="header__option">Alkohoolsed</a>
+          </NavLink>
+          <NavLink to="/nonAlcohol">
+            <a className="header__option">Mittealkohoolsed</a>
+          </NavLink>
 
-          <Link to="/nonAlcohol">
-            <span className="header__option">Mittealkohoolsed</span>
-          </Link>
-
-          <Link to="/randomRecipe">
-            <a href="" className="header__optionShuffle">
-              <ShuffleIcon />
-            </a>
-          </Link>
+          <Shuffle theme="dark" />
         </div>
       </div>
-
       <div className="header__navBar">
         <MenuIcon className="header__menuButton" />
       </div>

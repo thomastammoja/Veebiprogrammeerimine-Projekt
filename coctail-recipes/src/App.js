@@ -17,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/alcohol" element={<AlcoholicCocktail />} />
           <Route path="/nonalcohol" element={<NonAlcoholicCocktail />} />
-          <Route path="/randomRecipe" />
           <Route path="/searchCocktail" element={<SearchCocktail />} />
           <Route path="/" element={[<Home />]} />
         </Routes>
