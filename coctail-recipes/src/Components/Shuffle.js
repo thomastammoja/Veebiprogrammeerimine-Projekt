@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 //Components
 import CocktailModal from "./CocktailModal";
@@ -10,22 +11,24 @@ import ShuffleIcon from "@mui/icons-material/Shuffle";
 import "./Shuffle.css";
 
 function Shuffle({ theme }) {
-  const [randomRecipe, setRandomRecipe] = useState(() => []);
+  const [randomRecipeId, setRandomRecipeId] = useState();
   const [openModal, setOpenModal] = useState(false);
 
   const getRandomRecipe = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:8000/getRandomRecipe");
-      const jsonData = await response.json();
+    const MIN_VALUE = 1;
+    const MAX_VALUE = 62;
+    setRandomRecipeId(
+      Math.floor(Math.random() * (MAX_VALUE - MIN_VALUE) + MIN_VALUE)
+    );
 
-      setRandomRecipe(jsonData);
-      setOpenModal(true);
-    } catch (err) {
-      console.error(err.message);
-    }
+    setOpenModal(true);
   };
+
+  const randomRecipe = useSelector((state) => state.allRecipes).filter(
+    (i) => i.id === randomRecipeId
+  );
 
   return (
     <div className="shuffle">
@@ -35,6 +38,7 @@ function Shuffle({ theme }) {
         />
       </a>
       <CocktailModal
+        key={randomRecipe.id}
         open={openModal}
         onClose={() => setOpenModal(false)}
         recipe={randomRecipe[0]}

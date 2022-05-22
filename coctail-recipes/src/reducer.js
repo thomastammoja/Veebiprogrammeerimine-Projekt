@@ -9,6 +9,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         allRecipes: action.recipes,
       };
+    default:
+      return state;
   }
 };
 
