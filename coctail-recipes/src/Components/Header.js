@@ -20,13 +20,6 @@ function Header() {
     console.log(query);
   };
 
-  const navLinkStyle = ({ isActive }) => {
-    return {
-      fontWeight: isActive ? "bold" : "normal",
-      color: isActive ? "blue" : "white",
-    };
-  };
-
   return (
     <div className="header">
       <div className="header__container">
