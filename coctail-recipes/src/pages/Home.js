@@ -1,92 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Home.css";
 import Cocktail from "../components/Cocktail";
-import { useStateValue } from "../StateProvider";
 import CocktailModal from "../components/CocktailModal";
 import Banner from "../components/Banner";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const [{ recipes }, dispatch] = useStateValue();
-
-  const getAllRecipes = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/getAllRecipes");
-      const jsonData = await response.json();
-
-      dispatch({
-        type: "EMPTY_DATA_LAYER",
-      });
-
-      jsonData.map((s) =>
-        dispatch({
-          type: "ADD_RECIPE",
-          item: {
-            id: s.id,
-            recipename: s.recipename,
-            image: s.image,
-            rating: s.rating,
-            instructions: s.instructions,
-            icetype: s.icetype,
-            glassware: s.glassware,
-            ingredient1: s.ingredient1,
-            measure1: s.measure1,
-            ingredienttype1: s.ingredienttype1,
-            ingredient2: s.ingredient2,
-            measure2: s.measure2,
-            ingredienttype2: s.ingredienttype2,
-            ingredient3: s.ingredient3,
-            measure3: s.measure3,
-            ingredienttype3: s.ingredienttype3,
-            ingredient4: s.ingredient4,
-            measure4: s.measure4,
-            ingredienttype4: s.ingredienttype4,
-            ingredient5: s.ingredient5,
-            measure5: s.measure5,
-            ingredienttype5: s.ingredienttype5,
-            ingredient6: s.ingredient6,
-            measure6: s.measure6,
-            ingredienttype6: s.ingredienttype6,
-            ingredient7: s.ingredient7,
-            measure7: s.measure7,
-            ingredienttype7: s.ingredienttype7,
-            ingredient8: s.ingredient8,
-            measure8: s.measure8,
-            ingredienttype8: s.ingredienttype8,
-            ingredient9: s.ingredient9,
-            measure9: s.measure9,
-            ingredienttype9: s.ingredienttype9,
-            ingredient10: s.ingredient10,
-            measure10: s.measure10,
-            ingredienttype10: s.ingredienttype10,
-            recipeid: s.recipeid,
-            includesalcohol: s.includesalcohol,
-            includesvodka: s.includesvodka,
-            includesliquer: s.includesliquer,
-            includesgin: s.includesgin,
-            includesrum: s.includesrum,
-            includesvermut: s.includesvermut,
-            includeswhiskey: s.includeswhiskey,
-            includestequila: s.includestequila,
-            includescognac: s.includescognac,
-            includesbrandy: s.includesbrandy,
-            includeschampagne: s.includeschampagne,
-            includesbeer: s.includesbeer,
-            includesaperative: s.includesaperative,
-          },
-        })
-      );
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  useEffect(() => {
-    if (recipes?.length === 0) {
-      getAllRecipes();
-    }
-  }, []);
-
-  console.log(recipes);
+  const recipes = useSelector((state) => state.recipes.allRecipes);
 
   return (
     <div className="home">

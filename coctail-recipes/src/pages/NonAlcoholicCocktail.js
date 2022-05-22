@@ -2,27 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./NonAlcoholicCocktail.css";
 import Cocktail from "../components/Cocktail";
 import CocktailModal from "../components/CocktailModal";
+import { useSelector } from "react-redux";
 
 const NonAlcoholicCocktail = () => {
-  const [recipes, setRecipes] = useState([]);
+  const recipes = useSelector((state) => state.recipes.allRecipes).filter(
+    (i) => i.includesalcohol === 0
+  );
 
-  const getAllNonAlcoholicRecipes = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/getAllNonAlcoholicRecipes"
-      );
-      const jsonData = await response.json();
-      setRecipes(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  useEffect(() => {
-    getAllNonAlcoholicRecipes();
-  }, []);
-
-  console.log(recipes);
   return (
     <div className="nonAlcoholicCocktail">
       <div className="nonAlcoholicCocktail__cocktails">

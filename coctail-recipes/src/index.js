@@ -3,15 +3,28 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { StateProvider } from "./StateProvider";
-import reducer, { initialState } from "./reducer";
+import { legacy_createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import AllReducers from "./reducers/AllReducers";
+import { FetchRecipes, FilterByAlcohol } from "./actions/RecipesActions";
+import thunk from "redux-thunk";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = legacy_createStore(
+  AllReducers,
+  composeEnhancers(applyMiddleware(thunk))
+);
+
+store.dispatch(FetchRecipes());
+console.log("FETCHING");
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
+    <Provider store={store}>
       <App />
-    </StateProvider>
+    </Provider>
   </React.StrictMode>
 );
 

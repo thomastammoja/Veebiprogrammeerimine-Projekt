@@ -1,6 +1,7 @@
 export const initialState = {
   recipes: [],
   alcohol: [],
+  searchText: "",
 };
 
 const reducer = (state, action) => {
@@ -14,6 +15,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         recipes: [],
+      };
+    case "FETCH_RECIPES":
+      return {
+        ...state,
+        recipes: action.payload,
+      };
+    case "SEARCH_RECIPE":
+      return {
+        ...state,
+        searchText: action.payload,
       };
     default:
       return state;
