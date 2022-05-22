@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+import { legacy_createStore, applyMiddleware, compose } from "redux";
+
+// Components
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { legacy_createStore, applyMiddleware, compose } from "redux";
-import { Provider } from "react-redux";
 import AllReducers from "./reducers/AllReducers";
-import { FetchRecipes, FilterByAlcohol } from "./actions/RecipesActions";
-import thunk from "redux-thunk";
+import { FetchRecipes } from "./actions/RecipesActions";
+
+//Styles
+import "./index.css";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,7 +21,6 @@ const store = legacy_createStore(
 );
 
 store.dispatch(FetchRecipes());
-console.log("FETCHING");
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

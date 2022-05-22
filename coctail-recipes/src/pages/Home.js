@@ -1,9 +1,13 @@
 import React from "react";
-import "./Home.css";
+import { useSelector } from "react-redux";
+
+//Components
 import Cocktail from "../components/Cocktail";
 import CocktailModal from "../components/CocktailModal";
 import Banner from "../components/Banner";
-import { useSelector } from "react-redux";
+
+//Styles
+import "./Home.css";
 
 const Home = () => {
   const recipes = useSelector((state) => state.recipes.allRecipes);

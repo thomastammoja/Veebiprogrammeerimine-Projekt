@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
+//Components
+import CocktailModal from "./CocktailModal";
+
+//Icons
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 
-import CocktailModal from "./CocktailModal";
+//Styles
 import "./Shuffle.css";
 
 function Shuffle({ theme }) {
@@ -17,8 +22,6 @@ function Shuffle({ theme }) {
 
       setRandomRecipe(jsonData);
       setOpenModal(true);
-
-      console.log("JsonData >>>", jsonData[0].id);
     } catch (err) {
       console.error(err.message);
     }

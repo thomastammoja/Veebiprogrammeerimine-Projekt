@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import "./Cocktail.css";
-import StarRateIcon from "@mui/icons-material/StarRate";
+
+//Components
 import CocktailModal from "./CocktailModal";
+
+//Icons
+import StarRateIcon from "@mui/icons-material/StarRate";
+
+//Styles
+import "./Cocktail.css";
 
 function Cocktail({ recipe }) {
   const [openModal, setOpenModal] = useState(false);

@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
+
+//Components
+import Shuffle from "./Shuffle";
+
+//Icons
 import StarRateIcon from "@mui/icons-material/StarRate";
 import CloseIcon from "@mui/icons-material/Close";
-import Shuffle from "./Shuffle";
+
+//Styles
 import "./CocktailModal.css";
 
 function CocktailModal({ open, onClose, recipe, showShuffle }) {

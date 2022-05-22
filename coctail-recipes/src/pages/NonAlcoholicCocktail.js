@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
-import "./NonAlcoholicCocktail.css";
+import React from "react";
+import { useSelector } from "react-redux";
+
+//Components
 import Cocktail from "../components/Cocktail";
 import CocktailModal from "../components/CocktailModal";
-import { useSelector } from "react-redux";
+
+//Styles
+import "./NonAlcoholicCocktail.css";
 
 const NonAlcoholicCocktail = () => {
   const recipes = useSelector((state) => state.recipes.allRecipes).filter(

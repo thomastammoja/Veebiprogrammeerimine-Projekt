@@ -1,6 +1,10 @@
 import React from "react";
-import "./SearchCocktailItem.css";
+
+//Icons
 import StarRateIcon from "@mui/icons-material/StarRate";
+
+//Styles
+import "./SearchCocktailItem.css";
 
 function SearchCocktailItem({ id, image, info, rating }) {
   return (

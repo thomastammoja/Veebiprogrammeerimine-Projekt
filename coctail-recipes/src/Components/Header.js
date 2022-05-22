@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-// Components
+//Components
 import Shuffle from "./Shuffle";
 
-// Icons
+//Icons
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "@mui/icons-material/LocalBar";
 import MenuIcon from "@mui/icons-material/Menu";
 
-// Stylesheet
+//Stylesheet
 import "./Header.css";
 
 function Header() {

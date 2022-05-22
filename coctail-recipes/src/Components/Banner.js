@@ -1,11 +1,14 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+//Carousel images
 import img1 from "../images/img1.png";
 import img2 from "../images/img2.png";
 import img3 from "../images/img3.png";
 
+//Styles
 import "./Banner.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Banner() {
   return (
