@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //Components
 import Shuffle from "./Shuffle";
@@ -20,6 +20,8 @@ function Header() {
     console.log(query);
   };
 
+  console.log("HEADER QUERY >>>", query);
+
   return (
     <div className="header">
       <div className="header__container">
@@ -33,11 +35,13 @@ function Header() {
           <input
             className="header__searchInput"
             type="text"
-            placeholder="Otsi kokteili pealkirja järgi"
+            placeholder="Otsi kokteili..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <SearchIcon className="header__searchIcon" />
+          <Link to={`/searchCocktail/${query}`}>
+            <SearchIcon className="header__searchIcon" />
+          </Link>
         </div>
 
         <div className="header__nav">

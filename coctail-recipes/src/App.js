@@ -19,7 +19,11 @@ function App() {
         <Routes>
           <Route path="/alcohol" element={<AlcoholicCocktail />} />
           <Route path="/nonalcohol" element={<NonAlcoholicCocktail />} />
-          <Route path="/searchCocktail" element={<SearchCocktail />} />
+          <Route
+            path="/searchCocktail/:searchQuery"
+            element={<SearchCocktail />}
+          />
+          <Route path="/searchCocktail/" element={<SearchCocktail />} />
           <Route path="/" element={[<Home />]} />
         </Routes>
       </div>
