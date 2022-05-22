@@ -1,0 +1,23 @@
+.cocktails__cocktailsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cocktails__singleCocktail {
+  object-fit: contain;
+  width: 100%;
+  max-width: 350px;
+  margin-right: 20px;
+}
+
+/*.cocktails__singleCocktail:hover {
+  transition: 200ms;
+  transform: scale(1.03);
+}*/
+
+::-webkit-scrollbar {
+  display: none;
+}

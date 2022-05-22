@@ -29,6 +29,7 @@
 .cocktail > img:hover {
   transition: 200ms;
   transform: scale(1.02);
+  opacity: 0.2;
 }
 
 .cocktail__rating {
