@@ -18,7 +18,6 @@ export const FetchRecipes = () => {
 };
 
 export const UpdateActiveFilters = (columns) => {
-  console.log("COLUMNS >>>", columns);
   return (dispatch) => {
     dispatch({
       type: UPDATE_ACTIVE_FILTERS,

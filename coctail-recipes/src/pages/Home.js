@@ -14,8 +14,6 @@ const Home = () => {
   );
   const filters = useSelector((state) => state.typeFilters);
 
-  console.log("FILTERS >>>", filters);
-
   function filterRecipes(rec) {
     return filters.length > 0
       ? rec.filter((row) => filters?.some((column) => row[column] === 1))

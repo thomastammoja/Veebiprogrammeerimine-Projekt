@@ -12,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./FiltersPanel.css";
 
 function FiltersPanel({ open, onClose }) {
-  const [searchColumns, setSearchColumns] = useState(["viin"]);
+  const [searchColumns, setSearchColumns] = useState([]);
   const filterColumns = [
     "viin",
     "liköör",
