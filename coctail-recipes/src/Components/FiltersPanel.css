@@ -33,8 +33,8 @@
 }
 
 .filtersPanel__clearFiltersButton {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: -7px;
+  margin-bottom: 50px;
   border-radius: 5px;
   padding: 5px;
   background-color: #ff9900;
@@ -42,6 +42,14 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
+  outline: none;
+  border: 1px #e29633 solid;
+}
+
+.filtersPanel__clearFiltersButton:hover {
+  transition: 200ms;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7));
+  background-color: #ffbb56;
 }
 
 .filtersPanel__container > h5 {
