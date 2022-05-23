@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -13,9 +13,6 @@ const SearchCocktail = () => {
   console.log("RECIPE >>>", allRecipes[1]);
 
   function filterRecipes(rec) {
-    const columns = Object.keys(allRecipes[0]);
-    //const columns = "recipename";
-    console.log("columns >>>", columns);
     return rec.filter(
       (row) =>
         row.recipename.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1 ||
