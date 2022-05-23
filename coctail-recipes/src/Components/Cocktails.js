@@ -8,8 +8,9 @@ import CocktailModal from "./CocktailModal";
 import "./Cocktails.css";
 
 function Cocktails({ recipes }) {
-  if (!recipes) return null;
-  return (
+  return recipes.length === 0 ? (
+    <div className="cocktails__notFound">Kokteile ei leitud!</div>
+  ) : (
     <div className="cocktails">
       <div className="cocktails__container">
         <div className="cocktails__cocktailsList">

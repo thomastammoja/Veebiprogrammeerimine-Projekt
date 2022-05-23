@@ -7,10 +7,7 @@ import Cocktails from "../components/Cocktails";
 
 const SearchCocktail = () => {
   const searchQuery = useParams().searchQuery;
-
   const allRecipes = useSelector((state) => state.allRecipes);
-
-  console.log("RECIPE >>>", allRecipes[1]);
 
   function filterRecipes(rec) {
     return rec.filter(
@@ -37,6 +34,7 @@ const SearchCocktail = () => {
         row.ingredient10?.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1
     );
   }
+
   return <Cocktails recipes={filterRecipes(allRecipes)} />;
 };
 

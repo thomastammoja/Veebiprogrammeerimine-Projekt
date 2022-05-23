@@ -15,7 +15,7 @@ import "./index.css";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = legacy_createStore(
+export const store = legacy_createStore(
   Reducer,
   composeEnhancers(applyMiddleware(thunk))
 );

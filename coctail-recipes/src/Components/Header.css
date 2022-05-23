@@ -7,7 +7,7 @@
   z-index: 100;
 }
 
-.header__container {
+.header__topRowContainer {
   height: 60px !important;
   display: flex;
   align-items: center;
@@ -114,7 +114,9 @@
   }
 }
 
-.header__navBar {
+.header__bottomRowContainer {
+  display: flex;
+  position: static !important;
   width: 100%;
   height: 25px !important;
   background-color: #232f3e;
@@ -122,12 +124,16 @@
 
 .header__menuButton {
   color: white;
-}
-
-.header__menuButton:first-child {
   margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .active .header__option {
   color: #ff9900 !important;
+}
+
+.header__menuButton:hover {
+  transition: 200ms;
+  color: #ff9900;
 }

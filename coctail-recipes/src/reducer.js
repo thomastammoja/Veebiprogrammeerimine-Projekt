@@ -1,5 +1,6 @@
 const initialState = {
   allRecipes: [],
+  typeFilters: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allRecipes: action.recipes,
+      };
+    case "UPDATE_ACTIVE_FILTERS":
+      return {
+        ...state,
+        typeFilters: action.typeFilters,
       };
     default:
       return state;

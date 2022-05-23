@@ -1,0 +1,60 @@
+.filtersPanel {
+  background-color: #232f3e;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101 !important;
+}
+
+.filtersPanel__container {
+  padding: 20px;
+  max-width: 250px;
+  height: 100%;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  animation: fadein 500ms;
+}
+
+.filtersPanel__closeIcon {
+  color: white;
+  position: fixed;
+  left: 260px;
+  cursor: pointer;
+}
+
+.filtersPanel__closeIcon:hover {
+  transition: 200ms;
+  transform: scale(1.2);
+  color: #e29633;
+}
+
+.filtersPanel__clearFiltersButton {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ff9900;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.filtersPanel__container > h5 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.filtersPanel__form {
+  display: flex !important;
+  flex-direction: column;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+}

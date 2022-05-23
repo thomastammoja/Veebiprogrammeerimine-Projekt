@@ -23,7 +23,7 @@ function App() {
             path="/searchCocktail/:searchQuery"
             element={<SearchCocktail />}
           />
-          <Route path="/searchCocktail/" element={<SearchCocktail />} />
+          <Route path="/searchCocktail/" element={<Home />} />
           <Route path="/" element={[<Home />]} />
         </Routes>
       </div>
