@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import Header from "./components/Header";
+import FiltersHeader from "./components/FiltersHeader";
 import Home from "./pages/Home";
 import SearchCocktail from "./pages/SearchCocktail";
 import AlcoholicCocktail from "./pages/AlcoholicCocktail";
@@ -24,7 +25,7 @@ function App() {
             element={<SearchCocktail />}
           />
           <Route path="/searchCocktail/" element={<Home />} />
-          <Route path="/" element={[<Home />]} />
+          <Route path="/" element={[<FiltersHeader />, <Home />]} />
         </Routes>
       </div>
     </Router>

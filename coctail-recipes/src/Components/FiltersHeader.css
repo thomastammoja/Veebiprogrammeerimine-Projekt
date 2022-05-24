@@ -1,0 +1,33 @@
+.filtersHeader {
+  display: flex;
+  height: 25px !important;
+  background-color: #232f3e;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filtersHeader__menuButtonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.filtersHeader__menuButtonContainer > label {
+  margin-left: 10px;
+  color: #ff9900;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.filtersHeader__menuButton {
+  color: white;
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.filtersHeader__menuButton:hover {
+  transition: 200ms;
+  color: #ff9900;
+}

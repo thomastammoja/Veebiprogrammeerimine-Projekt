@@ -7,34 +7,25 @@ import Shuffle from "./Shuffle";
 //Icons
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "@mui/icons-material/LocalBar";
-import MenuIcon from "@mui/icons-material/Menu";
 
 //Stylesheet
 import "./Header.css";
-import FiltersPanel from "./FiltersPanel";
 
 function Header() {
   const [query, setQuery] = useState("");
-  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(query);
   };
 
-  const toggleFiltersPanel = (e) => {
-    filtersOpen ? setFiltersOpen(false) : setFiltersOpen(true);
-  };
-
-  console.log("HEADER QUERY >>>", query);
-
   return (
     <div className="header">
       <div className="header__topRowContainer">
         <div className="header__logo">
-          <NavLink to="/">
+          <Link to="/">
             <Logo className="header__logoIcon" />
-          </NavLink>
+          </Link>
         </div>
 
         <div className="header__search" onSubmit={submitHandler}>
@@ -60,18 +51,6 @@ function Header() {
 
           <Shuffle theme="dark" />
         </div>
-      </div>
-      <div className="header__bottomRowContainer">
-        <MenuIcon
-          className="header__menuButton"
-          onClick={(e) => toggleFiltersPanel()}
-        />
-      </div>
-      <div className="header__filtersPanel">
-        <FiltersPanel
-          open={filtersOpen}
-          onClose={(e) => toggleFiltersPanel()}
-        />
       </div>
     </div>
   );
