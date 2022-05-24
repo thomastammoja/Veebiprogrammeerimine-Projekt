@@ -6,7 +6,7 @@ CREATE VIEW coctails.v_allRecipes AS (
 		,rec.instructions
 		,ice.iceType
 		,'https://cookieandkate.com/images/2020/08/best-mojito-recipe-2.jpg' AS image
-		,4 AS rating
+		,FLOOR(RANDOM()*(5-3+1))+3 AS rating
 		,glass.name AS glassware
 		,ing1.name AS ingredient1
 		,rec.measure1Id AS measure1
