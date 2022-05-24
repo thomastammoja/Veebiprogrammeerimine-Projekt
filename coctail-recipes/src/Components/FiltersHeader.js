@@ -28,7 +28,6 @@ function FiltersHeader() {
         <FiltersPanel
           open={filtersOpen}
           onClose={(e) => setFiltersOpen(false)}
-          setFilters={(e) => setFilters(e)}
         />
       </div>
     </div>
